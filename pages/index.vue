@@ -3,7 +3,9 @@
     <Nav />
     <Banner />
     <Testimonial />
-<!--    <Services />-->
+    <CallToActionThree />
+    <PartnersSection />
+    <Footer />
 <!--    <About />-->
 <!--    <LiveSection />-->
 <!--    <WedoSection />-->
@@ -16,7 +18,6 @@
 <!--    <AgencySection />-->
 <!--    <BlogSection />-->
 <!--    <CallToAction />-->
-    <Footer />
   </div>
 </template>
 
@@ -24,26 +25,29 @@
 
   import Nav from "../components/Nav";
   import Banner from "../components/Banner";
-  import Services from "../components/Services";
-  import About from "../components/About";
-  import LiveSection from "../components/LiveSection";
-  import WedoSection from "../components/WedoSection";
-  import GallerySection from "../components/GallerySection";
-  import FactSection from "../components/FactSection";
-  import TrustedSection from "../components/TrustedSection";
-  import Testimonial from "../components/Testimonial";
-  import TeamSection from "../components/TeamSection";
-  import ParallaxSection from "../components/ParallaxSection";
-  import BrandsSection from "../components/BrandsSection";
-  import AgencySection from "../components/AgencySection";
-  import BlogSection from "../components/BlogSection";
-  import CallToAction from "../components/CallToAction";
+  import Testimonial from "../components/testimonials/Testimonial";
+  import CallToActionThree from "../components/CallToActionThree";
+  import PartnersSection from "../components/generals/PartnersSection";
   import Footer from "../components/Footer";
+  // import Services from "../components/Services";
+  // import About from "../components/About";
+  // import LiveSection from "../components/LiveSection";
+  // import WedoSection from "../components/WedoSection";
+  // import GallerySection from "../components/GallerySection";
+  // import FactSection from "../components/FactSection";
+  // import TrustedSection from "../components/TrustedSection";
+  // import TeamSection from "../components/TeamSection";
+  // import ParallaxSection from "../components/ParallaxSection";
+  // import BrandsSection from "../components/BrandsSection";
+  // import AgencySection from "../components/AgencySection";
+  // import BlogSection from "../components/BlogSection";
+  // import CallToAction from "../components/CallToAction";
 
   export default {
     components: {
       Footer,
-      CallToAction,
+      PartnersSection,
+      /*CallToAction,
       BlogSection,
       AgencySection,
       BrandsSection,
@@ -55,10 +59,11 @@
       WedoSection,
       LiveSection,
       About,
-      Services,
+      Services,*/
       Banner,
       Testimonial,
-      Nav
+      Nav,
+      CallToActionThree
 
     }
   }

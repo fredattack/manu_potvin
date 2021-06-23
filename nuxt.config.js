@@ -12,7 +12,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/images/favicon.png' },
+      { rel: 'icon', type: 'image/x-icon', href: '/images/custom/favicon_manu.png' },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" },
       { rel: "stylesheet", href: "/css/bootstrap.css" },
       { rel: "stylesheet", href: "/css/animate.css" },
@@ -35,7 +35,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#ffa915', height: '4px' },
+  loading: { color: '#95d5dc', height: '4px' },
   /*
   ** Global CSS
   */
@@ -57,6 +57,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+
   ],
   /*
   ** Build configuration
@@ -67,5 +68,20 @@ export default {
     */
     extend (config, ctx) {
     }
+
+  },
+
+  env: {
+    baseURL: process.env.BASE_URL,
+    phoneNumber: '0475 62 64 40'
+  },
+
+  components: {
+    dirs: [
+      '~/components',
+      '~/components/generals',
+      '~/components/products',
+      '~/components/testimonials',
+    ]
   }
 }

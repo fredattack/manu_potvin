@@ -63,15 +63,10 @@
             <div class="sidebar-widget services">
               <div class="widget-inner">
                 <div class="sidebar-title">
-                  <h4>All Services</h4>
+                  <h4>Nos partenaires</h4>
                 </div>
-                <ul>
-                  <li class="active"><a to="/web-development">Website Development</a></li>
-                  <li><nuxt-link to="/graphic-designing">Graphic Designing</nuxt-link></li>
-                  <li><nuxt-link to="/digital-marketing">Digital Marketing</nuxt-link></li>
-                  <li><nuxt-link to="/seo">SEO &amp; Content Writting</nuxt-link></li>
-                  <li><nuxt-link to="/app-development">App Development</nuxt-link></li>
-                  <li><nuxt-link to="/ui-designing">UI/UX Designing</nuxt-link></li>
+                <ul v-if="partners_logo">
+                  <img :src="logo" alt="" v-for="logo in partners_logo">
                 </ul>
               </div>
             </div>
@@ -79,11 +74,11 @@
             <div class="sidebar-widget call-up">
               <div class="widget-inner">
                 <div class="sidebar-title">
-                  <h4>need Linoor help?</h4>
+                  <h4>Une question ?</h4>
                 </div>
-                <div class="text">Prefer speaking with a human to filling out a form? call corporate
-                  office and we will connect you with a team member who can help.</div>
-                <div class="phone"><a href="tel:666888000"><span class="icon flaticon-call"></span>666 888 000</a></div>
+                <div class="text">Vous préférez parler à un humain plutôt que de remplir un formulaire? Appeler nous,
+                  et nous vous mettrons en contact avec un membre de l'équipe qui pourra vous aider.</div>
+                <div class="phone"><a v-bind:href="`tel:${$config.phoneNumber}`"><span class="icon flaticon-call"></span>{{ $config.phoneNumber}}</a></div>
               </div>
             </div>
 
@@ -98,7 +93,12 @@
 
 <script>
     export default {
-        name: "ServiceDetails"
+        name: "ServiceDetails",
+      data(){
+          return [
+
+          ]
+      }
     }
 </script>
 

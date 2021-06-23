@@ -12,7 +12,7 @@
     },
     head(){
       return {
-        title: "Linoor - Vue Nuxt Digital Agency Services Template"
+        title: "Manu Potvin"
       }
     },
     mounted(){

@@ -27,7 +27,7 @@
 <!--                    <li><nuxt-link to="/index-3">Home Style 03</nuxt-link></li>-->
 <!--                  </ul>-->
                 </li>
-                <li class="dropdown"><nuxt-link to="/about">Portes-Fenêtres-Chassis</nuxt-link>
+                <li class="dropdown"><nuxt-link to="/products/portes_fenêtres_chassis">Portes-Fenêtres-Chassis</nuxt-link>
                   <ul>
                     <li><nuxt-link to="/team">Chassis PVC</nuxt-link></li>
                     <li><nuxt-link to="/testimonials">Chassis Alu</nuxt-link></li>
@@ -35,9 +35,9 @@
 <!--                    <li><nuxt-link to="/not-found">404 Page</nuxt-link></li>-->
                   </ul>
                 </li>
-                <li class="dropdown"><nuxt-link to="/services">Portes de garages</nuxt-link>
-                <li class="dropdown"><nuxt-link to="/services">Pergolas</nuxt-link>
-                <li class="dropdown"><nuxt-link to="/services">Moustiquaires</nuxt-link>
+                <li class="dropdown"><nuxt-link to="/products/portes_de_garage">Portes de garage</nuxt-link>
+                <li class="dropdown"><nuxt-link to="/products/pergolas">Pergolas</nuxt-link>
+                <li class="dropdown"><nuxt-link to="/products/moustiquaires">Moustiquaires</nuxt-link>
 <!--                  <ul>-->
 <!--                    <li><nuxt-link to="/services">All Services</nuxt-link></li>-->
 <!--                    <li><nuxt-link to="/web-development">Website Development</nuxt-link></li>-->
@@ -71,10 +71,10 @@
         <div class="other-links clearfix">
           <div class="link-box">
             <div class="call-us">
-              <a class="link" href="tel:0032475626440">
+              <a class="link" v-bind:href="`tel:${phoneNumber}`">
                 <span class="icon"></span>
                 <span class="sub-text">Numéro direct</span>
-                <span class="number">0475 62 64 40</span>
+                <span class="number"> {{phoneNumber}} </span>
               </a>
             </div>
           </div>
@@ -142,6 +142,11 @@
 <script>
   export default {
     name: "Nav",
+    computed: {
+      phoneNumber() {
+        return process.env.phoneNumber;
+      },
+    },
     data(){
       return {
         sticky: false,

@@ -1,7 +1,7 @@
 {
-  "name": "linoor",
+  "name": "manu_potvin",
   "version": "1.0.0",
-  "description": "Linoor - Vue Nuxt Digital Agency Services Template",
+  "description": "Manu Potvin - chassis, portes, fenêtres, pergolas",
   "author": "Layerdrops",
   "private": true,
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "mixitup": "^3.3.1",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.7",
     "swiper": "^5.4.5",
     "v-owl-carousel": "^1.0.8",
     "vue-awesome-swiper": "^4.1.1",
