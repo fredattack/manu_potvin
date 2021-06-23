@@ -90,12 +90,15 @@
 
       <div :class="`collapse navbar-collapse ${mobileToggle ? 'show' : ''} clearfix`">
         <ul class="navigation clearfix">
-          <li class="dropdown"><a href="#">Home<div class="dropdown-btn"><span class="fa fa-angle-right"></span></div></a>
-            <ul class="sub-menu">
+          <li class="dropdown">
+            <a href="/">Accueil<div class="dropdown-btn">
+              <span class="fa fa-angle-right"></span>
+            </div></a>
+<!--            <ul class="sub-menu">
               <li><nuxt-link to="/">Home Style 01</nuxt-link></li>
               <li><nuxt-link to="/index-2">Home Style 02</nuxt-link></li>
               <li><nuxt-link to="/index-3">Home Style 03</nuxt-link></li>
-            </ul>
+            </ul>-->
           </li>
           <li><nuxt-link to="/about">About Us</nuxt-link></li>
           <li class="dropdown"><a href="#">Pages<div class="dropdown-btn"><span class="fa fa-angle-right"></span></div></a>

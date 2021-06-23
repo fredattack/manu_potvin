@@ -6,9 +6,9 @@
       <div class="inner-container clearfix">
         <!--Logo-->
         <div class="logo-box">
-          <div class="logo"><a href="/" title="Linoor - DIgital Agency Template"><img
-            src="/images/logo.png" id="thm-logo" alt="Linoor - Digital Agency HTML Template"
-            title="Linoor - DIgital Agency Template"></a></div>
+          <div class="logo"><a href="/" title="Manu Potvin"><img
+              src="/images/custom/logo_full_white.png" id="thm-logo" alt="Manu potvin"
+              title="Manu Potvin"></a></div>
         </div>
         <div class="nav-outer clearfix">
           <!--Mobile Navigation Toggler-->
@@ -149,14 +149,14 @@
 
       const mobileNav = document.querySelector('.mobile-nav__container');
       const dropdownMenu = mobileNav.querySelectorAll('.dropdown');
-      
+
       for (let i = 0; i < dropdownMenu.length; i++) {
           dropdownMenu[i].addEventListener("click", function() {
           this.classList.toggle('open');
           this.classList.toggle('current');
           });
       }
-      
+
     },
     methods: {
 
