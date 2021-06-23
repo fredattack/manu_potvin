@@ -4,6 +4,7 @@
     <Banner />
     <Testimonial />
     <CallToActionThree />
+    <ParallaxSection />
     <PartnersSection />
     <Footer />
 <!--    <About />-->
@@ -13,7 +14,6 @@
 <!--    <FactSection />-->
 <!--    <TrustedSection />-->
 <!--    <TeamSection />-->
-<!--    <ParallaxSection />-->
 <!--    <BrandsSection />-->
 <!--    <AgencySection />-->
 <!--    <BlogSection />-->
@@ -37,7 +37,7 @@
   // import FactSection from "../components/FactSection";
   // import TrustedSection from "../components/TrustedSection";
   // import TeamSection from "../components/TeamSection";
-  // import ParallaxSection from "../components/ParallaxSection";
+  import ParallaxSection from "../components/ParallaxSection";
   // import BrandsSection from "../components/BrandsSection";
   // import AgencySection from "../components/AgencySection";
   // import BlogSection from "../components/BlogSection";
@@ -50,9 +50,9 @@
       /*CallToAction,
       BlogSection,
       AgencySection,
-      BrandsSection,
+      BrandsSection,*/
       ParallaxSection,
-      TeamSection,
+      /*TeamSection,
       TrustedSection,
       FactSection,
       GallerySection,

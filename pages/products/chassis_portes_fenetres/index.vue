@@ -2,7 +2,10 @@
   <div>
     <Nav />
     <PageHeader :title="title" />
-    <ProductDetailsPortesDeGarage />
+    <ChassisDuoPage />
+    <ChassisCompare />
+<!--    <About />
+    <AboutTwo />-->
     <CallToActionThree />
     <Footer />
   </div>
@@ -10,24 +13,30 @@
 <script>
   import Nav from "../../../components/Nav";
   import PageHeader from "../../../components/PageHeader";
-  import Footer from "../../../components/Footer";
+  import ChassisDuoPage from "../../../components/products/ChassisDuoPage";
+  import ChassisCompare from "../../../components/products/ChassisCompare";
+  import AboutTwo from "../../../components/AboutTwo";
+  import About from "../../../components/About";
   import CallToActionThree from "../../../components/CallToActionThree";
-  import ServiceDetails from "../../../components/ServiceDetails";
+  import Footer from "../../../components/Footer";
 
   export default {
     mounted() {
       // console.log('this.$router', $route.params._category)
     },
     components: {
-      ServiceDetails,
+      ChassisDuoPage,
       CallToActionThree,
+      ChassisCompare,
+      About,
+      AboutTwo,
       Footer,
       PageHeader,
       Nav
     },
     data(){
       return {
-        'title': this.$route.params.category !== 'portes_de_garage' ? this.$route.params.category.split('_').join('-') : this.$route.params.category.split('_').join(' ')
+        'title': 'Portes, Fenêtres et chassis'
       }
     },
     head(){
