@@ -5,7 +5,7 @@
         <!--left Block-->
         <div class="discover-block col-lg-6 col-md-12 col-sm-12">
           <div class="inner-box">
-            <div class="image-box"><img src="/images/custom/fenetre_alu_first%20.jpeg" alt=""></div>
+            <div class="image-box"><img src="/images/custom/fenetre_alu_first-.jpg" alt=""></div>
             <div class="cap-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
               <div class="cap-inner">
                 <h5>Plus d'infos sur les chassis aluminium</h5>

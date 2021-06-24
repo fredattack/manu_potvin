@@ -57,7 +57,7 @@
               différents...
             </div>
             <div class="featured-block-two clearfix">
-              <div class="image"><img src="/images/custom/chassis_detail_alu.png" alt="" style="width: 300px"></div>
+              <div class="image"><img src="/images/custom/chassis_detail_alu.jpg" alt="" style="width: 300px"></div>
               <div class="text">
                 <ul>
                   <li>Conçu pour être durable.</li>
@@ -78,7 +78,7 @@
             </div>
             <div class="featured-block-two clearfix">
               <div class="image">
-                <img src="/images/custom/chassis_detail_pvc.png" alt="" style="width: 300px">
+                <img src="/images/custom/chassis_detail_pvc.jpg" alt="" style="width: 300px">
               </div>
               <div class="text">
                 <ul>

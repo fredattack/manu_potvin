@@ -27,10 +27,10 @@
 <!--                    <li><nuxt-link to="/index-3">Home Style 03</nuxt-link></li>-->
 <!--                  </ul>-->
                 </li>
-                <li class="dropdown"><nuxt-link to="/products/portes_fenêtres_chassis">Portes-Fenêtres-Chassis</nuxt-link>
+                <li class="dropdown"><nuxt-link to="/products/chassis_portes_fenetres">Portes-Fenêtres-Chassis</nuxt-link>
                   <ul>
-                    <li><nuxt-link to="/team">Chassis PVC</nuxt-link></li>
-                    <li><nuxt-link to="/testimonials">Chassis Alu</nuxt-link></li>
+                    <li><nuxt-link to="/products/chassis_portes_fenetres/PVC">Chassis PVC</nuxt-link></li>
+                    <li><nuxt-link to="/products/chassis_portes_fenetres/ALU">Chassis Alu</nuxt-link></li>
 <!--                    <li><nuxt-link to="/faqs">FAQs</nuxt-link></li>-->
 <!--                    <li><nuxt-link to="/not-found">404 Page</nuxt-link></li>-->
                   </ul>
