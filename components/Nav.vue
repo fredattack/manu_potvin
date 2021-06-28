@@ -7,62 +7,49 @@
         <!--Logo-->
         <div class="logo-box">
           <div class="logo"><a href="/" title="Manu Potvin"><img
-            src="/images/custom/logo_full_white.png" id="thm-logo" alt="Manu potvin"
-            title="Manu Potvin"></a></div>
+              src="/images/custom/logo_full_white.png" id="thm-logo" alt="Manu potvin"
+              title="Manu Potvin"></a></div>
         </div>
         <div class="nav-outer clearfix">
           <!--Mobile Navigation Toggler-->
           <div class="mobile-nav-toggler">
-            <span @click="mobileToggle = !mobileToggle" class="icon flaticon-menu-2"></span><span class="txt">Menu</span>
+            <span @click="mobileToggle = !mobileToggle" class="icon flaticon-menu-2"></span><span
+              class="txt">Menu</span>
           </div>
 
           <!-- Main Menu -->
           <nav class="main-menu navbar-expand-md navbar-light">
             <div class="collapse navbar-collapse show clearfix">
               <ul class="navigation clearfix">
-                <li class="current dropdown"><a href="/">Accueil</a>
-<!--                  <ul>-->
-<!--                    <li><nuxt-link to="/">Home Style 01</nuxt-link></li>-->
-<!--                    <li><nuxt-link to="/index-2">Home Style 02</nuxt-link></li>-->
-<!--                    <li><nuxt-link to="/index-3">Home Style 03</nuxt-link></li>-->
-<!--                  </ul>-->
-                </li>
-                <li class="dropdown"><nuxt-link to="/products/chassis_portes_fenetres">Portes-Fenêtres-Chassis</nuxt-link>
+                <li class="dropdown" :class="[{ current: this.$route.name === 'index' }]"><a href="/">Accueil</a></li>
+                <li class="dropdown" :class="[{ current: ['products-chassis_portes_fenetres','products-chassis_portes_fenetres-type'].includes(this.$route.name) }]">
+                  <nuxt-link to="/products/chassis_portes_fenetres">Portes-Fenêtres-Chassis</nuxt-link>
                   <ul>
-                    <li><nuxt-link to="/products/chassis_portes_fenetres/PVC">Chassis PVC</nuxt-link></li>
-                    <li><nuxt-link to="/products/chassis_portes_fenetres/ALU">Chassis Alu</nuxt-link></li>
-<!--                    <li><nuxt-link to="/faqs">FAQs</nuxt-link></li>-->
-<!--                    <li><nuxt-link to="/not-found">404 Page</nuxt-link></li>-->
+                    <li>
+                      <nuxt-link to="/products/chassis_portes_fenetres/PVC">Chassis PVC</nuxt-link>
+                    </li>
+                    <li>
+                      <nuxt-link to="/products/chassis_portes_fenetres/ALU">Chassis Alu</nuxt-link>
+                    </li>
                   </ul>
                 </li>
-                <li class="dropdown"><nuxt-link to="/products/portes_de_garage">Portes de garage</nuxt-link>
-                <li class="dropdown"><nuxt-link to="/products/pergolas">Pergolas</nuxt-link>
-                <li class="dropdown"><nuxt-link to="/products/moustiquaires">Moustiquaires</nuxt-link>
-<!--                  <ul>-->
-<!--                    <li><nuxt-link to="/services">All Services</nuxt-link></li>-->
-<!--                    <li><nuxt-link to="/web-development">Website Development</nuxt-link></li>-->
-<!--                    <li><nuxt-link to="/graphic-designing">Graphic Designing</nuxt-link></li>-->
-<!--                    <li><nuxt-link to="/digital-marketing">Digital Marketing</nuxt-link></li>-->
-<!--                    <li><nuxt-link to="/seo">SEO & Content Writting</nuxt-link></li>-->
-<!--                    <li><nuxt-link to="/app-development">App Development</nuxt-link></li>-->
-<!--                    <li><nuxt-link to="/ui-designing">UI/UX Designing</nuxt-link></li>-->
-<!--                  </ul>-->
+                <li class="dropdown" :class="[{ current: this.$route.name === 'products-portes_de_garage' }]">
+                  <nuxt-link to="/products/portes_de_garage">Portes de garage</nuxt-link>
                 </li>
-                <li class="dropdown"><nuxt-link to="/portfolio">NOS RÉALISATIONS</nuxt-link>
-<!--                  <ul>-->
-<!--                    <li><nuxt-link to="/portfolio">Portfolio</nuxt-link></li>-->
-<!--                    <li><nuxt-link to="/portfolio-single">Portfolio Single 01</nuxt-link></li>-->
-<!--                    <li><nuxt-link to="/portfolio-single-2">Portfolio Single 02</nuxt-link></li>-->
-<!--                  </ul>-->
+                <li class="dropdown" :class="[{ current: this.$route.name === 'products-pergolas' }]">
+                  <nuxt-link to="/products/pergolas">Pergolas</nuxt-link>
                 </li>
-<!--                <li class="dropdown"><nuxt-link to="/blog-grid">Blog</nuxt-link>-->
-<!--                  <ul>-->
-<!--                    <li><nuxt-link to="/blog">Blog Sidebar</nuxt-link></li>-->
-<!--                    <li><nuxt-link to="/blog-grid">Blog Grid View</nuxt-link></li>-->
-<!--                    <li><nuxt-link to="/blog-single">Blog Single</nuxt-link></li>-->
-<!--                  </ul>-->
-<!--                </li>-->
-                <li><nuxt-link to="/contact">Contact</nuxt-link></li>
+                <li class="dropdown" :class="[{ current: this.$route.name === 'products-moustiquaires' }]">
+                  <nuxt-link to="/products/moustiquaires">Moustiquaires</nuxt-link>
+                </li>
+                <li class="dropdown" :class="[{ current: this.$route.name === 'portfolio' }]">
+                  <nuxt-link to="/portfolio">NOS RÉALISATIONS</nuxt-link>
+                </li>
+
+
+                <li class="dropdown" :class="[{ current: this.$route.name === 'contact' }]">
+                  <nuxt-link to="/contact">Contact</nuxt-link>
+                </li>
               </ul>
             </div>
           </nav>
@@ -74,7 +61,7 @@
               <a class="link" v-bind:href="`tel:${phoneNumber}`">
                 <span class="icon"></span>
                 <span class="sub-text">Numéro direct</span>
-                <span class="number"> {{phoneNumber}} </span>
+                <span class="number"> {{ phoneNumber }} </span>
               </a>
             </div>
           </div>
@@ -90,47 +77,39 @@
 
       <div :class="`collapse navbar-collapse ${mobileToggle ? 'show' : ''} clearfix`">
         <ul class="navigation clearfix">
-          <li class="dropdown"><a href="/">Accueil<div class="dropdown-btn"><span class="fa fa-angle-right"></span></div></a>
-<!--            <ul class="sub-menu">-->
-<!--              <li><nuxt-link to="/">Home Style 01</nuxt-link></li>-->
-<!--              <li><nuxt-link to="/index-2">Home Style 02</nuxt-link></li>-->
-<!--              <li><nuxt-link to="/index-3">Home Style 03</nuxt-link></li>-->
-<!--            </ul>-->
+          <li class="dropdown"><a href="/">Accueil
+            <div class="dropdown-btn"><span class="fa fa-angle-right"></span></div>
+          </a>
           </li>
-<!--          <li><nuxt-link to="/about">About Us</nuxt-link></li>-->
-          <li class="dropdown"><nuxt-link to="/products/chassis_portes_fenetres">Portes-Fenêtres-Chassis<div class="dropdown-btn"><span class="fa fa-angle-right"></span></div></nuxt-link>
+          <li class="dropdown">
+            <nuxt-link to="/products/chassis_portes_fenetres">Portes-Fenêtres-Chassis
+              <div class="dropdown-btn"><span class="fa fa-angle-right"></span></div>
+            </nuxt-link>
             <ul class="sub-menu">
-              <li><nuxt-link to="/products/chassis_portes_fenetres/PVC">Chassis PVC</nuxt-link></li>
-              <li><nuxt-link to="/products/chassis_portes_fenetres/ALU">Chassis Alu</nuxt-link></li>
+              <li>
+                <nuxt-link to="/products/chassis_portes_fenetres/PVC">Chassis PVC</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="/products/chassis_portes_fenetres/ALU">Chassis Alu</nuxt-link>
+              </li>
             </ul>
           </li>
-          <li ><nuxt-link to="/products/portes_de_garage">Portes de garage</nuxt-link>
-<!--            <ul class="sub-menu">-->
-<!--              <li><nuxt-link to="/services">All Services</nuxt-link></li>-->
-<!--              <li><nuxt-link to="/web-development">Website Development</nuxt-link></li>-->
-<!--              <li><nuxt-link to="/graphic-designing">Graphic Designing</nuxt-link></li>-->
-<!--              <li><nuxt-link to="/digital-marketing">Digital Marketing</nuxt-link></li>-->
-<!--              <li><nuxt-link to="/seo">SEO & Content Writting</nuxt-link></li>-->
-<!--              <li><nuxt-link to="/app-development">App Development</nuxt-link></li>-->
-<!--              <li><nuxt-link to="/ui-designing">UI/UX Designing</nuxt-link></li>-->
-<!--            </ul>-->
+          <li>
+            <nuxt-link to="/products/portes_de_garage">Portes de garage</nuxt-link>
+
           </li>
-          <li ><nuxt-link to="/products/pergolas">Pergolas</nuxt-link>
-<!--            <ul class="sub-menu">-->
-<!--              <li><nuxt-link to="/portfolio">Portfolio</nuxt-link></li>-->
-<!--              <li><nuxt-link to="/portfolio-single">Portfolio Single 01</nuxt-link></li>-->
-<!--              <li><nuxt-link to="/portfolio-single-2">Portfolio Single 02</nuxt-link></li>-->
-<!--            </ul>-->
+          <li>
+            <nuxt-link to="/products/pergolas">Pergolas</nuxt-link>
           </li>
-          <li ><nuxt-link to="/products/moustiquaires">Moustiquaires</nuxt-link>
-<!--            <ul class="sub-menu">-->
-<!--              <li><nuxt-link to="/blog">Blog Sidebar</nuxt-link></li>-->
-<!--              <li><nuxt-link to="/blog-grid">Blog Grid View</nuxt-link></li>-->
-<!--              <li><nuxt-link to="/blog-single">Blog Single</nuxt-link></li>-->
-<!--            </ul>-->
+          <li>
+            <nuxt-link to="/products/moustiquaires">Moustiquaires</nuxt-link>
           </li>
-          <li><nuxt-link to="/portfolio">Nos Réalisations</nuxt-link></li>
-          <li><nuxt-link to="/contact">Contact</nuxt-link></li>
+          <li>
+            <nuxt-link to="/portfolio">Nos Réalisations</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/contact">Contact</nuxt-link>
+          </li>
         </ul>
       </div>
     </nav>
@@ -139,45 +118,47 @@
 </template>
 
 <script>
-  export default {
-    name: "Nav",
-    computed: {
-      phoneNumber() {
-        return process.env.phoneNumber;
-      },
+export default {
+  name: "Nav",
+  computed: {
+    phoneNumber() {
+      return process.env.phoneNumber;
     },
-    data(){
-      return {
-        sticky: false,
-        mobileToggle: false
-      }
-    },
-    mounted() {
-      window.addEventListener('scroll', this.handleScroll);
-
-      const mobileNav = document.querySelector('.mobile-nav__container');
-      const dropdownMenu = mobileNav.querySelectorAll('.dropdown');
-
-      for (let i = 0; i < dropdownMenu.length; i++) {
-          dropdownMenu[i].addEventListener("click", function() {
-          this.classList.toggle('open');
-          this.classList.toggle('current');
-          });
-      }
-
-
-    },
-    methods: {
-
-      handleScroll() {
-        if (window.scrollY > 70) {
-          this.sticky = true
-        } else if (window.scrollY < 70) {
-          this.sticky = false
-        }
-      },
+  },
+  data() {
+    return {
+      sticky: false,
+      mobileToggle: false
     }
+  },
+  mounted() {
+    console.log('name', this.$route.name)
+    window.addEventListener('scroll', this.handleScroll);
+
+    const mobileNav = document.querySelector('.mobile-nav__container');
+
+    const mobileDropdownMenu = mobileNav.querySelectorAll('.dropdown');
+
+
+    for (let i = 0; i < mobileDropdownMenu.length; i++) {
+      mobileDropdownMenu[i].addEventListener("click", function () {
+        this.classList.toggle('open');
+        this.classList.toggle('current');
+      });
+    }
+  },
+  methods: {
+
+    handleScroll() {
+      if (window.scrollY > 70) {
+        this.sticky = true
+      } else if (window.scrollY < 70) {
+        this.sticky = false
+      }
+    },
+
   }
+}
 </script>
 
 <style scoped>

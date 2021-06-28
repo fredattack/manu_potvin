@@ -9,7 +9,7 @@
             <div class="cap-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
               <div class="cap-inner">
                 <h5>Plus d'infos sur les chassis aluminium</h5>
-                <div class="more-link"><nuxt-link to="theme/digital-marketing"><span
+                <div class="more-link"><nuxt-link to="/products/chassis_portes_fenetres/ALU"><span
                   class="fa fa-angle-right"></span></nuxt-link></div>
               </div>
             </div>
@@ -23,8 +23,8 @@
             <div class="cap-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
               <div class="cap-inner">
                 <h5>Plus d'infos sur les chassis PVC</h5>
-                <div class="more-link"><nuxt-link class="theme-btn" to="/theme/ui-designing"><span
-                  class="fa fa-angle-right"></span></nuxt-link></div>
+                <div class="more-link"> <nuxt-link to="/products/chassis_portes_fenetres/PVC"><span
+                    class="fa fa-angle-right"></span></nuxt-link></div>
               </div>
             </div>
           </div>
