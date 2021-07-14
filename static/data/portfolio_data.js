@@ -1,34 +1,107 @@
 export const portfolio_data = [
     {
-        id: 1,
-        name: 'Hormann',
-        picture:'/images/custom/Hormannlogo.jpg',
+        name: 'Porte pvc',
+        picture:'/images/custom/porto_chassis_01.jpg',
         category:'chassis',
     },
     {
-        id: 2,
-        name: 'Feneko',
-        picture:'/images/custom/feneko_logo.png',
-        category:'porte_de_garage',
-    },
-    {
-        id: 3,
-        name: 'AGC',
-        picture:'/images/custom/AGC-logo-BrandStatement_Center_web.png',
+        name: 'Porte Aluminium',
+        picture:'/images/custom/porto_chassis_0.jpg',
+        category:'chassis',
+    },{
+        name: 'chassis Aluminium',
+        picture:'/images/custom/porto_chassis_3.jpg',
+        category:'chassis',
+    },{
+        name: 'Moustiquaire fenêko',
+        picture:'/images/custom/porto_moustiquaire_1.jpg',
         category:'moustiquaire',
     },
     {
-        id: 4,
-        name: 'aliplast',
-        picture:'/images/custom/aliplast.png',
-        category:'pergolas',
-
-    },
-    {
-        id: 5,
-        name: 'Kömmerling',
-        picture:'/images/custom/kommerling.png',
+        name: 'Chassis PVC',
+        picture:'/images/custom/porto_chassis_1.jpg',
+        category:'chassis',
+    },{
+        name: 'Porte Aluminium',
+        picture:'/images/custom/porto_chassis_5.jpg',
         category:'chassis',
     },
+    {
+        name: 'Moustiquaire Feneko',
+        picture:'/images/custom/porto_moustiquaire_2.jpg',
+        category:'moustiquaire',
+    },{
+        name: 'Kömmerling',
+        picture:'/images/custom/porto_chassis_1_last.jpg',
+        category:'chassis',
+    },{
+        name: 'Kömmerling',
+        picture:'/images/custom/porto_chassis_2_last.jpg',
+        category:'chassis',
+    },{
+        name: 'Kömmerling',
+        picture:'/images/custom/porto_chassis_3_last.jpg',
+        category:'chassis',
+    },{
+        name: 'Kömmerling',
+        picture:'/images/custom/porto_chassis_4.jpg',
+        category:'chassis',
+    }, {
+        name: 'Porte de Garage',
+        picture:'/images/custom/porte_garage_1_last.jpg',
+        category:'porte_de_garage',
+    }, {
+        name: 'Porte de Garage',
+        picture:'/images/custom/porte_garage_2_last.jpg',
+        category:'porte_de_garage',
+    }, {
+        name: 'Fermeture de Moustiquaire',
+        picture:'/images/custom/moustiquaire_1_last.jpg',
+        category:'moustiquaire',
+    }, {
+        name: 'Moustiquaire coulissant',
+        picture:'/images/custom/moustiquaire_4_last.jpg',
+        category:'moustiquaire',
+    }, {
+        name: 'Moustiquaire coulissant',
+        picture:'/images/custom/moustiquaire_5_last.jpg',
+        category:'moustiquaire',
+    },{
+        name: 'Moustiquaire coulissant',
+        picture:'/images/custom/moustiquaire_6_last.jpg',
+        category:'moustiquaire',
+    }, {
+        name: 'Chatiére pour Moustiquaire',
+        picture:'/images/custom/mousiquaire_chatiere.jpg',
+        category:'moustiquaire',
+    } , {
+        name: 'Moustiquaire avec chatiére',
+        picture:'/images/custom/mousiquaire_chatiere_2.jpg',
+        category:'moustiquaire',
+    } ,{
+        name: 'Moustiquaire',
+        picture:'/images/custom/moustiquaire_2_last.jpg',
+        category:'moustiquaire',
+    },{
+        name: 'Hörman',
+        picture:'/images/custom/porto_garage_1.jpg',
+        category:'porte_de_garage',
 
+    },{
+        name: 'Kömmerling',
+        picture:'/images/custom/porto_garage_2.jpg',
+        category:'porte_de_garage',
+    },{
+        name: 'Kömmerling',
+        picture:'/images/custom/porto_chassis_2.jpg',
+        category:'chassis',
+    },{
+        name: 'Kömmerling',
+        picture:'/images/custom/porto_chassis_4_last.jpg',
+        category:'chassis',
+    },{
+        name: 'Moustiquaire coulissant',
+        picture:'/images/custom/moustiquaire_3_last.jpg',
+        category:'moustiquaire',
+    },
 ]

@@ -1,7 +1,7 @@
 {
   "name": "manu_potvin",
   "version": "1.0.0",
-  "description": "Manu Potvin - chassis, portes, fenêtres, pergolas",
+  "description": "Remplacement de châssis, porte PVC et ALU, porte de garage, volet et pergola.\nToute réparation volet, châssis, porte, remplacement vitrage",
   "author": "Layerdrops",
   "private": true,
   "scripts": {
@@ -11,13 +11,19 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/auth-next": "5.0.0-1624817847.21691f1",
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/recaptcha": "^1.0.4",
     "mixitup": "^3.3.1",
     "nuxt": "^2.15.7",
+    "nuxt-mail": "^3.0.7",
     "swiper": "^5.4.5",
     "v-owl-carousel": "^1.0.8",
     "vue-awesome-swiper": "^4.1.1",
     "vue-count-to": "^1.0.13",
     "vue-observe-visibility": "^0.4.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxt/image": "^0.5.0"
+  }
 }

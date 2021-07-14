@@ -4,7 +4,7 @@
     <div class="auto-container">
       <div class="content-box">
         <div class="icon-box"><span class="flaticon-idea"></span></div>
-        <h2>Nous construisons <span> Jusqu'au bout de vos rêve...</span></h2>
+        <h2>Nous construisons <span> Jusqu'au bout de vos rêves...</span></h2>
       </div>
     </div>
   </section>

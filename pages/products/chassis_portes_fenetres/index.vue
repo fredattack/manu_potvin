@@ -4,8 +4,7 @@
     <PageHeader :title="title" />
     <ChassisDuoPage />
     <ChassisCompare />
-<!--    <About />
-    <AboutTwo />-->
+    <GalleryPage category="chassis"/>
     <CallToActionThree />
     <Footer />
   </div>
@@ -19,6 +18,8 @@
   import About from "../../../components/About";
   import CallToActionThree from "../../../components/CallToActionThree";
   import Footer from "../../../components/Footer";
+
+  import {seo_data} from "/static/data/seo_data";
 
   export default {
     mounted() {
@@ -39,9 +40,11 @@
         'title': 'Portes, Fenêtres et chassis'
       }
     },
+
     head(){
       return {
-        title: `Manu Potvin | ${this.title}`
+        title: `Manu Potvin | ${this.title}`,
+        meta: seo_data.chassis
       }
     }
   }

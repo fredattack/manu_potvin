@@ -3,6 +3,7 @@
     <Nav />
     <PageHeader :title="title" />
     <ProductDetailsPortesDeGarage />
+    <GalleryPage category="porte_de_garage"/>
     <CallToActionThree />
     <Footer />
   </div>
@@ -13,6 +14,7 @@
   import Footer from "../../../components/Footer";
   import CallToActionThree from "../../../components/CallToActionThree";
   import ProductDetailsPortesDeGarage from "../../../components/products/ProductDetails/ProductDetailsPortesDeGarage";
+  import {seo_data} from "../../../static/data/seo_data";
 
   export default {
     mounted() {
@@ -32,7 +34,8 @@
     },
     head(){
       return {
-        title: `Manu Potvin | ${this.title}`
+        title: `Manu Potvin | ${this.title}`,
+        meta: seo_data.portes_garage
       }
     }
   }

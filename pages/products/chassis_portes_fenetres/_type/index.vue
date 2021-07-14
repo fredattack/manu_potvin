@@ -42,7 +42,8 @@
     },
     head(){
       return {
-        title: `Manu Potvin | ${this.title}`
+        title: `Manu Potvin | ${this.title}`,
+        meta: seo_data.chassis
       }
     }
   }

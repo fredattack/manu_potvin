@@ -1,8 +1,8 @@
 <template>
   <div>
     <Nav />
-    <PageHeader :title="title" />
-    <ProductDetailsPergolas />
+    <PageHeader title="UI/UX Designing" />
+    <ProductDetailsPortesDeGarage />
     <CallToActionThree />
     <Footer />
   </div>
@@ -12,29 +12,18 @@
   import PageHeader from "../../../components/PageHeader";
   import Footer from "../../../components/Footer";
   import CallToActionThree from "../../../components/CallToActionThree";
-  import ProductDetailsPergolas from "../../../components/products/ProductDetails/ProductDetailsPergolas";
-  import {seo_data} from "../../../static/data/seo_data";
-
+  import ServiceDetails from "../../../components/ServiceDetails";
   export default {
-    mounted() {
-      // console.log('this.$router', $route.params._category)
-    },
     components: {
-      ProductDetailsPergolas,
+      ServiceDetails,
       CallToActionThree,
       Footer,
       PageHeader,
       Nav
     },
-    data(){
-      return {
-        'title': 'Pergolas'
-      }
-    },
     head(){
       return {
-        title: `Manu Potvin | ${this.title}`,
-        meta: seo_data.pergolas
+        title: "Linoor | UI/UX Designing"
       }
     }
   }

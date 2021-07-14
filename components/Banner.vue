@@ -13,9 +13,9 @@
           <!--          </div>-->
           <div class="social-links">
             <ul class="clearfix">
-              <li><a href="#"><span>Twitter</span></a></li>
-              <li><a href="#"><span>Facebook</span></a></li>
-              <li><a href="#"><span>Youtube</span></a></li>
+<!--              <li><a href="#"><span>Twitter</span></a></li>-->
+              <li><a href="https://www.facebook.com/PotvinManu"><span>Facebook</span></a></li>
+<!--              <li><a href="#"><span>Youtube</span></a></li>-->
             </ul>
           </div>
         </div>
@@ -63,7 +63,7 @@
 <!--                      <div class="sub-title">welcome to Linoor agency</div>-->
                       <h1><small>Manu</small></h1><h1>Potvin</h1>
                       <div class="link-box">
-                        <nuxt-link class="theme-btn btn-style-one" to="/about">
+                        <nuxt-link class="theme-btn btn-style-one" to="/portfolio">
                           <i class="btn-curve"></i>
                           <span class="btn-title">Nos Réalisations</span>
                         </nuxt-link>
@@ -88,7 +88,7 @@
                       <!--                      <div class="sub-title">welcome to Linoor agency</div>-->
                       <h1><small>Manu</small></h1><h1>Potvin</h1>
                       <div class="link-box">
-                        <nuxt-link class="theme-btn btn-style-one" to="/about">
+                        <nuxt-link class="theme-btn btn-style-one" to="/portfolio">
                           <i class="btn-curve"></i>
                           <span class="btn-title">Nos Réalisations</span>
                         </nuxt-link>
