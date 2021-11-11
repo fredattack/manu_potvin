@@ -71,7 +71,7 @@ export default {
     portfolio_data_filtered: function () {
       console.log('this.category',this.category)
       if (this.category) {
-        console.log('in if')
+
         const _category = this.category
         return portfolio_data.filter(function (data) {
           return data.category === _category;

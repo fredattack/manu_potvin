@@ -71,11 +71,11 @@
       <!--                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230899.1642407818!2d145.06327708904033!3d-37.792102974783376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65cd0db468a97%3A0xb61fde84306fc38a!2sMelbourne%20Zoo!5e0!3m2!1sen!2s!4v1592307685926!5m2!1sen!2s"-->
       <!--                style="border:0;" aria-hidden="false" tabindex="0"></iframe>-->
       <!--      </div>-->
-      <div class="form-box">
+      <div class="form-box" v-if="!sended">
         <div class="sec-title">
           <h2>Laissez nous un message<span class="dot">.</span></h2>
         </div>
-        <div class="default-form">
+        <div class="default-form" >
           <form method="post" action="#" id="contact-form">
             <div class="row clearfix">
               <div class="form-group col-lg-6 col-md-6 col-sm-12">
@@ -104,9 +104,9 @@
                   <textarea v-model="message" placeholder="laisssez votre message" required=""></textarea>
                 </div>
               </div>
-              <div class="w-100 d-flex justify-content-center my-5" >
+              <div class="w-100 d-flex justify-content-center my-5">
 
-              <recaptcha />
+                <recaptcha/>
               </div>
               <div class="form-group col-lg-12 col-md-12 col-sm-12 mt-3">
                 <button class="theme-btn btn-style-one" @click.prevent="send">
@@ -117,6 +117,13 @@
             </div>
           </form>
         </div>
+      </div>
+      <div class="row" v-if="sended">
+
+        <div class="sec-title">
+          <h2><span class="dot">Merci, </span>votre message a été envoyé avec succès.</h2>
+        </div>
+
       </div>
     </div>
 
@@ -131,25 +138,27 @@ export default {
     email: '',
     phone: '',
     subject: '',
-    message: ''
+    message: '',
+    sended: false
   }),
   methods: {
-   async send() {
-     try {
-       const token = await this.$recaptcha.getResponse()
-       console.log('ReCaptcha token:', token)
-     //
-     //   // send token to server alongside your form data
-      this.$mail.send({
-         from: this.email,
-         subject: 'demande de contact site web',
-         text:  'nom:'+this.name+'<br> telephone:'+this.phone+'<br> object:'+this.subject+'<br> message:'+this.message,
-       })
-     //   // at the end you need to reset recaptcha
-       await this.$recaptcha.reset()
-     } catch (error) {
-       console.log('Login error:', error)
-     }
+    async send() {
+      try {
+        const token = await this.$recaptcha.getResponse()
+        console.log('ReCaptcha token:', token)
+        //
+        //   // send token to server alongside your form data
+        this.$mail.send({
+          from: this.email,
+          subject: 'demande de contact site web',
+          text: 'nom:' + this.name + '<br> telephone:' + this.phone + '<br> object:' + this.subject + '<br> message:' + this.message,
+        })
+        //   // at the end you need to reset recaptcha
+        this.sended = true;
+        await this.$recaptcha.reset()
+      } catch (error) {
+        console.log('Login error:', error)
+      }
 
     }
   }

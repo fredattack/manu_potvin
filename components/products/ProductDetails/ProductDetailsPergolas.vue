@@ -7,7 +7,7 @@
         <div class="content-side col-lg-8 col-md-12 col-sm-12">
           <div class="service-details">
             <div class="main-image image">
-              <img src="../../../static/images/custom/pergolas_main.jpeg" alt="">
+              <img src="../../../static/images/custom/pergolas_main.jpeg" alt="pergolas hannut">
             </div>
             <div class="text-content">
               <h3>Nos Pergolas</h3>
@@ -19,7 +19,7 @@
                 <div class="row clearfix">
                   <div class="image-col col-md-6 col-sm-12">
                     <div class="image">
-                      <img src="../../../static/images/custom/pergolas_second.jpeg" alt="">
+                      <img src="../../../static/images/custom/pergolas_second.jpeg" alt="pergolas hannut">
                     </div>
                   </div>
 
@@ -76,9 +76,9 @@
       components: {CallUsBlock,ProductPartnersBlock},
       data(){
         return{
-         /* partnersLogos :[
-            {logo:'/images/custom/feneko_logo.png',name:'Feneko'},
-          ]*/
+          partnersLogos :[
+            {logo:'/images/custom/SkyLux.png',name:'SkyLux'},
+          ]
         }
       }
 

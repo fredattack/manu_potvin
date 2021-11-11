@@ -72,8 +72,6 @@ export default {
     /*
     ** Nuxt.js dev-modules
     */
-
-    target: 'static',
     buildModules: [
         '@nuxt/image',
     ],

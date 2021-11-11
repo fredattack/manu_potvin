@@ -4,7 +4,7 @@
       <div class="sidebar-title">
         <h4 class="mb-4">Nos partenaires</h4>
         <div style="display: flex; flex-direction:column; align-items: center" v-if="partnersLogos">
-          <img  class="mb-3" width="100" :srcset="partner.logo" :alt="partner.name" v-for="partner in this.partnersLogos">
+          <img  class="mb-3" width="100" :srcset="partner.logo" :alt="`pergolas hannut ${partner.name}`" v-for="partner in this.partnersLogos">
         </div>
       </div>
     </div>

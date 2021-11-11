@@ -70,6 +70,10 @@ export const portfolio_data = [
         name: 'Moustiquaire coulissant',
         picture:'/images/custom/moustiquaire_6_last.jpg',
         category:'moustiquaire',
+    },{
+        name: 'moustiquaire coulissante Élégance',
+        picture:'/images/custom/moustiquaire_7_last.jpg',
+        category:'moustiquaire',
     }, {
         name: 'Chatiére pour Moustiquaire',
         picture:'/images/custom/mousiquaire_chatiere.jpg',
@@ -83,6 +87,10 @@ export const portfolio_data = [
         picture:'/images/custom/moustiquaire_2_last.jpg',
         category:'moustiquaire',
     },{
+        name: 'chassis black cherry',
+        picture:'/images/custom/porto_chassis_6.jpg',
+        category:'chassis',
+    },{
         name: 'Hörman',
         picture:'/images/custom/porto_garage_1.jpg',
         category:'porte_de_garage',
@@ -91,6 +99,10 @@ export const portfolio_data = [
         name: 'Kömmerling',
         picture:'/images/custom/porto_garage_2.jpg',
         category:'porte_de_garage',
+    },{
+        name: 'chassis black cherry',
+        picture:'/images/custom/porto_chassis_6.jpg',
+        category:'chassis',
     },{
         name: 'Kömmerling',
         picture:'/images/custom/porto_chassis_2.jpg',
@@ -103,5 +115,9 @@ export const portfolio_data = [
         name: 'Moustiquaire coulissant',
         picture:'/images/custom/moustiquaire_3_last.jpg',
         category:'moustiquaire',
+    },{
+        name: 'Pergola skylux',
+        picture:'/images/custom/pergola1.jpeg',
+        category:'pergola',
     },
 ]

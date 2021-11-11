@@ -52,7 +52,7 @@
             <!-- Slide Item 2-->
             <div class="slide-item">
               <div class="image-layer"
-                   style="background-image: url(/images/main-slider/custom/main_home-2.jpeg);"></div>
+                   style="background-image: url(/images/background/new_main_home-2.jpg);"></div>
               <div class="left-top-line"></div>
               <div class="right-bottom-curve"></div>
 <!--              <div class="right-top-curve"></div>-->
@@ -74,30 +74,30 @@
               </div>
             </div>
 
-            <!-- Slide Item 3-->
-            <div class="slide-item">
-              <div class="image-layer"
-                   style="background-image: url(/images/main-slider/custom/main_home-3.jpeg);"></div>
-              <div class="left-top-line"></div>
-              <div class="right-bottom-curve"></div>
-<!--              <div class="right-top-curve"></div>-->
-              <div class="auto-container">
-                <div class="content-box">
-                  <div class="content">
-                    <div class="inner">
-                      <!--                      <div class="sub-title">welcome to Linoor agency</div>-->
-                      <h1><small>Manu</small></h1><h1>Potvin</h1>
-                      <div class="link-box">
-                        <nuxt-link class="theme-btn btn-style-one" to="/portfolio">
-                          <i class="btn-curve"></i>
-                          <span class="btn-title">Nos Réalisations</span>
-                        </nuxt-link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+<!--            &lt;!&ndash; Slide Item 3&ndash;&gt;-->
+<!--            <div class="slide-item">-->
+<!--              <div class="image-layer"-->
+<!--                   style="background-image: url(/images/main-slider/custom/main_home-3.jpeg);"></div>-->
+<!--              <div class="left-top-line"></div>-->
+<!--              <div class="right-bottom-curve"></div>-->
+<!--&lt;!&ndash;              <div class="right-top-curve"></div>&ndash;&gt;-->
+<!--              <div class="auto-container">-->
+<!--                <div class="content-box">-->
+<!--                  <div class="content">-->
+<!--                    <div class="inner">-->
+<!--                      &lt;!&ndash;                      <div class="sub-title">welcome to Linoor agency</div>&ndash;&gt;-->
+<!--                      <h1><small>Manu</small></h1><h1>Potvin</h1>-->
+<!--                      <div class="link-box">-->
+<!--                        <nuxt-link class="theme-btn btn-style-one" to="/portfolio">-->
+<!--                          <i class="btn-curve"></i>-->
+<!--                          <span class="btn-title">Nos Réalisations</span>-->
+<!--                        </nuxt-link>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
 
           </carousel>
         </no-ssr>

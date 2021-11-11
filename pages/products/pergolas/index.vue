@@ -3,6 +3,7 @@
     <Nav />
     <PageHeader :title="title" />
     <ProductDetailsPergolas />
+    <GalleryPage category="pergola"/>
     <CallToActionThree />
     <Footer />
   </div>
