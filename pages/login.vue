@@ -1,6 +1,5 @@
 <template>
     <div class="row justify-content-center m-6">
-      <form @submit.prevent="userLogin" class=" border border-primary p-6">
         <div>
           <label>Username</label>
           <input type="text" v-model="login.email"/>
@@ -10,13 +9,13 @@
           <input type="text" v-model="login.password"/>
         </div>
         <div>
-          <button type="submit">Submit</button>
+          <button type="button" @click="processUserLoginAction">Submit</button>
         </div>
-      </form>
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
   data() {
     return {
@@ -27,29 +26,15 @@ export default {
     }
   },
   methods: {
-    async userLogin() {
-      const data = { email: this.login.email, password: this.login.password };
-      console.log("data", data)
+    ...mapActions('auth', ['userLogin']),
+    async processUserLoginAction() {
       try {
-        const response = await this.$axios.$post('/login', data);
-
-        this.$cookies.set('token', response.token, {
-          path: '/',
-          maxAge: 60 * 60 * 24 * 7 // 1 week
-        });
-        this.$router.push('/dashboard');
-      } catch (error) {
-        console.error('Invalid login', error);
-      }
-    },
-   /* async userLogin() {
-      try {
-        let response = await this.$auth.loginWith('local', {data: this.login})
-        console.log(response)
+        const data = { email: this.login.email, password: this.login.password };
+        await this.userLogin(data)
       } catch (err) {
-        console.log(err)
+        console.error(err)
       }
-    }*/
+    }
   }
 }
 </script>
