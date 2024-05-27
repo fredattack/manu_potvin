@@ -115,12 +115,17 @@ export default {
     ** Global CSS
     */
     css: [
-        '@/assets/css/tailwind.css'
+        '@/assets/css/tailwind.css',
+        '@fortawesome/fontawesome-svg-core/styles.css'
     ],
-    /*
-    ** Plugins to load before mounting the App
-    */
+
+
+
     plugins: [
+        '~/plugins/fontawesome.js',
+        '~/plugins/vue-cookies.js',
+        '~/plugins/router-inject.js',
+        { src: '~/plugins/vue-cropperjs.js', mode: 'client' },
         {
             src: 'plugins/owl.js',
             ssr: false
@@ -141,15 +146,19 @@ export default {
     */
     buildModules: [
         '@nuxt/image',
+        '@nuxtjs/fontawesome',
     ],
     /*
     ** Nuxt.js modules
     */
     modules: [
+        '@nuxtjs/toast',
         '@nuxtjs/axios',
         '@nuxtjs/auth-next',
         'cookie-universal-nuxt',
-        ['nuxt-mail', {
+
+        [
+            'nuxt-mail', {
             message: {
                 to: 'info@manupotvin.be',
             },
@@ -169,6 +178,7 @@ export default {
             version: "V3",     // Version
             size: "normal"
         }],
+
     ],
     auth:{
         strategies: {
@@ -197,7 +207,24 @@ export default {
             home: "/"
         }
     },
-
+    toast: {
+        position: 'top-center',
+        register: [ // Register custom toasts
+            {
+                name: 'my-error',
+                message: 'Oops...Something went wrong',
+                options: {
+                    type: 'error'
+                }
+            }
+        ]
+    },
+    fontawesome: {
+        icons: {
+            solid: true,
+            brands: true,
+        },
+    },
     /*
     ** Build configuration
     */
@@ -209,9 +236,7 @@ export default {
         },
         postcss: {
             postcssOptions: require('./postcss.config.js')
-        }
-
-
+        },
     },
 
     env: {
@@ -226,6 +251,9 @@ export default {
             '~/components/products',
             '~/components/testimonials',
         ]
+    },
+    purgeCSS: {
+        whitelistPatterns: [/svg.*/, /fa.*/]
     },
     router: {
     extendRoutes(routes, resolve) {

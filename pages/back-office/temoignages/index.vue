@@ -17,51 +17,73 @@
       </div>
 
       <template>
-        <ul role="list"
-            class="divide-y divide-gray-100 overflow-hidden bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl">
-          <li v-for="temoignage in temoignages"
-              :key="temoignage.testimonial"
-              class="relative flex justify-between gap-x-6 px-4 py-5 hover:bg-gray-50 sm:px-6">
-
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div v-for="temoignage in temoignages" class="hover:bg-gray-300 relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400" :key="temoignage.testimonial">
+          <div class="flex-shrink-0">
             <div
-                class="flex min-w-0 gap-x-4">
-              <img v-if="temoignage.imageUrl"
-                  class="h-12 w-12 flex-none rounded-full bg-gray-50"
-                  :src="temoignage.imageUrl"
-                  alt=""/>
-              <img v-else class="h-12 w-12 flex-none rounded-full bg-gray-50" src="/images/custom/testimonials.jpg" alt="">
-              <div
-                  class="min-w-0 flex-auto">
-                <p class="text-sm font-semibold leading-6 text-gray-900">
-                  <a :href="'temoignages/' + temoignage.id">
-                    <span
-                        class="absolute inset-x-0 -top-px bottom-0"></span>
-                    {{
-                      temoignage.author
-                    }}
-                  </a>
-                </p>
-                <p class="mt-1 flex text-xs leading-5 text-gray-500">
-                  {{
-                    temoignage.content
-                  }}
-                </p>
-              </div>
-            </div>
-            <div
-                class="flex shrink-0 items-center gap-x-4">
-              <div
-                  class="hidden sm:flex sm:flex-col sm:items-end">
-                <p class="text-sm leading-6 text-gray-900">
-                  {{
-                    temoignage.city
-                  }}</p>
+                v-if="temoignage.image"
+                v-html="temoignage.image"
+                class="object-cover rounded-full shadow-lg w-20 h-20"></div>
+<!--            <img class="h-20 w-20 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">-->
+          </div>
+          <div class="min-w-0 flex-1">
+            <a :href="'temoignages/' + temoignage.id" class="focus:outline-none ">
+              <span class="absolute inset-0" aria-hidden="true"></span>
+              <p class="font-bold text-gray-900">
+                {{ temoignage.author }}<span class="ml-1 text-xs font-medium text-gray-600">({{ temoignage.city }})</span></p>
+              <p class="text-sm text-gray-500">
+                {{temoignage.content}}</p>
+            </a>
+          </div>
+        </div>
 
-              </div>
+        <!-- More people... -->
+      </div>
+<!--        <ul role="list"-->
+<!--            class="divide-y divide-gray-100 overflow-hidden bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl">-->
+<!--          <li v-for="temoignage in temoignages"-->
+<!--              :key="temoignage.testimonial"-->
+<!--              class="relative flex justify-between gap-x-6 px-4 py-5 hover:bg-gray-50 sm:px-6">-->
 
-            </div>
-          </li>
-        </ul>
+<!--            <div-->
+<!--                class="flex min-w-0 gap-x-4">-->
+<!--              <img v-if="temoignage.imageUrl"-->
+<!--                  class="h-12 w-12 flex-none rounded-full bg-gray-50"-->
+<!--                  :src="temoignage.imageUrl"-->
+<!--                  alt=""/>-->
+<!--              <img v-else class="h-12 w-12 flex-none rounded-full bg-gray-50" src="/images/custom/testimonials.jpg" alt="">-->
+<!--              <div-->
+<!--                  class="min-w-0 flex-auto">-->
+<!--                <p class="text-sm font-semibold leading-6 text-gray-900">-->
+<!--                  <a :href="'temoignages/' + temoignage.id">-->
+<!--                    <span-->
+<!--                        class="absolute inset-x-0 -top-px bottom-0"></span>-->
+<!--                    {{-->
+<!--                      temoignage.author-->
+<!--                    }}-->
+<!--                  </a>-->
+<!--                </p>-->
+<!--                <p class="mt-1 flex text-xs leading-5 text-gray-500">-->
+<!--                  {{-->
+<!--                    temoignage.content-->
+<!--                  }}-->
+<!--                </p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div-->
+<!--                class="flex shrink-0 items-center gap-x-4">-->
+<!--              <div-->
+<!--                  class="hidden sm:flex sm:flex-col sm:items-end">-->
+<!--                <p class="text-sm leading-6 text-gray-900">-->
+<!--                  {{-->
+<!--                    temoignage.city-->
+<!--                  }}</p>-->
+
+<!--              </div>-->
+
+<!--            </div>-->
+<!--          </li>-->
+<!--        </ul>-->
       </template>
     </div>
   </div>

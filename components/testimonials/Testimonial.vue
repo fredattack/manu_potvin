@@ -6,22 +6,27 @@
       </div>
       <div class="carousel-box">
         <div class="testimonials-carousel">
-          <carousel v-if="aTestimonials"
+          <carousel v-if="temoignages"
                     :autoplay="true"
                     :margin="30"
                     :responsive="{0: {items: 1},600: {items: 1},768: {items: 1},992: {items: 2},1200: {items: 2}}"
                    >
 
-            <div class="testi-block"  v-for="testimonial in aTestimonials">
+            <div class="testi-block"  v-for="temoignage in temoignages">
               <div class="inner">
                 <div class="icon"><span>“</span></div>
                 <div class="info">
-                  <div class="image"><a href="#"><img v-bind:src="testimonial.image"
-                                                              alt=""></a></div>
-                  <div class="name">{{ testimonial.customerName }}</div>
-                  <div class="designation">{{ testimonial.customerCity }}</div>
+                  <div class="image">
+                    <div
+                      v-if="temoignage.image"
+                      v-html="temoignage.image">
+
+                    </div>
+                  </div>
+                  <div class="name">{{ temoignage.author }}</div>
+                  <div class="designation">{{ temoignage.city }}</div>
                 </div>
-                <div class="text">{{testimonial.message}}</div>
+                <div class="text">{{temoignage.content}}</div>
               </div>
             </div>
 
@@ -34,6 +39,13 @@
 
 <script>
 import {testimonials_data} from "../../static/data/testimonials_data";
+import {
+  mapActions,
+  mapGetters,
+  mapState
+} from "vuex";
+import temoignages
+  from "@/pages/back-office/temoignages/index.vue";
     export default {
         name: "Testimonial",
       data() {
@@ -42,7 +54,16 @@ import {testimonials_data} from "../../static/data/testimonials_data";
           aTestimonials:  testimonials_data,
 
         }
-      }
+      },
+      computed: {
+        ...mapState('temoignages', ['temoignages'])
+      },
+      methods: {
+      ...mapActions('temoignages', ['getAllTemoignages'])
+      },
+      mounted() {
+        this.getAllTemoignages();
+      },
 
     }
 
