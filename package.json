@@ -5,7 +5,7 @@
   "author": "Layerdrops",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt --port 4280",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
@@ -34,7 +34,8 @@
     "vue-cookies": "^1.8.4",
     "vue-count-to": "^1.0.13",
     "vue-cropperjs": "^4.0.0",
-    "vue-observe-visibility": "^0.4.6"
+    "vue-observe-visibility": "^0.4.6",
+    "vue-split-carousel": "^3.0.2"
   },
   "devDependencies": {
     "@nuxt/image": "^0.5.0",

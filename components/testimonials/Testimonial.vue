@@ -6,7 +6,7 @@
       </div>
       <div class="carousel-box">
         <div class="testimonials-carousel">
-          <carousel v-if="temoignages"
+          <carousel v-if="temoignages.length"
                     :autoplay="true"
                     :margin="30"
                     :responsive="{0: {items: 1},600: {items: 1},768: {items: 1},992: {items: 2},1200: {items: 2}}"
@@ -31,8 +31,6 @@
             </div>
 
           </carousel>
-
-
         </div>
       </div>
     </div>
@@ -64,7 +62,7 @@ import temoignages
       ...mapActions('temoignages', ['getAllTemoignages'])
       },
       mounted() {
-        this.getAllTemoignages();
+        this.getAllTemoignages({published:true});
       },
 
     }

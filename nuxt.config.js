@@ -265,7 +265,12 @@ export default {
         routes.push({
             name: 'realisations',
             path: '/realisations',
-            component: resolve(__dirname, 'pages/back-office/realisations.vue')
+            component: resolve(__dirname, 'pages/back-office/realisations/index.vue')
+        });
+        routes.push({
+            name: 'realisations edit',
+            path: '/realisations/:id',
+            component: resolve(__dirname, 'pages/back-office/realisations/_id.vue')
         });
         routes.push({
             name: 'temoignages',

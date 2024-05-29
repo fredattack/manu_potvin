@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 
 import * as authModule from './authentication';
 import * as temoignagesModule from './temoignages';
+import * as realisationsModule from './realisations';
 import * as imageModule from './images';
 
 Vue.use(Vuex);
@@ -20,11 +21,16 @@ export const modules = {
         namespaced: true,
         ...authModule
     },
+    realisations: {
+        namespaced: true,
+        ...realisationsModule
+    },
     temoignages: {
         namespaced: true,
         ...temoignagesModule
-    },images: {
+    },
+    images: {
         namespaced: true,
-        ...temoignagesModule
+        ...imageModule
     }
 };

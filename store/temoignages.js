@@ -20,10 +20,14 @@ export const mutations = {
 
 export const actions = {
 
-    async getAllTemoignages({commit}) {
+    async getAllTemoignages({commit},payload) {
 
         //use axios to get temoignage
-        const response = await this.$axios.get('api/v1/testimonial');
+        let url = 'api/v1/testimonial';
+        if(payload  && 'published' in payload ){
+            url += '?published=true';
+        }
+        const response = await this.$axios.get(url);
         console.log("response", response.data)
         commit('SET_ALL_TEMOIGNAGES', response.data.temoignages);
 

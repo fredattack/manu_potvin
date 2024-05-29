@@ -4,7 +4,8 @@
     <hr/>
 
     <input
-        ref="input"
+        :ref="`input${imageCollection}`"
+        :id="`input${imageCollection}`"
         type="file"
         name="image"
         accept="image/*"
@@ -22,14 +23,14 @@
               class="block text-sm font-medium leading-6 text-gray-900">
             <font-awesome-icon
                 :icon="['fas', 'image']"/>
-            Cover
-            photo</label>
+            {{ title }}</label>
           <vue-cropper
               v-if="imgSrc"
               ref="cropper"
               :aspect-ratio="ratio"
               :src="imgSrc"
               preview=".preview"
+              :autoCropArea="0.5"
           />
           <div
               v-else
@@ -242,11 +243,17 @@ import {
   mapActions
 } from "vuex";
 
+
 export default {
   components: {
     VueCropper,
   },
   props: {
+    title: {
+      type: String,
+      required: false,
+      default: "Illustation",
+    },
     model: {
       type: String,
       required: true,
@@ -302,7 +309,7 @@ export default {
         case "paysage":
           return "16 / 9";
         case "portait":
-          return "9/16";
+          return "9 / 16";
         case "square":
           return "1/1";
         default:
@@ -314,7 +321,10 @@ export default {
     ...mapActions('images', ["imageUpload"]),
     cropImage() {
       // get image data for post processing, e.g. upload or setting image src
-      this.cropImg = this.$refs.cropper.getCroppedCanvas().toDataURL();
+      this.cropImg = this.$refs.cropper.getCroppedCanvas(
+          { maxWidth: 1920,
+            maxHeight: 1920},
+      ).toDataURL();
     },
     flipX() {
       const dom = this.$refs.flipX;
@@ -358,7 +368,7 @@ export default {
     setImage(e) {
       const file = e.target.files[0];
       this.file = file;
-      console.log("this.file", this.file)
+
       if (file.type.indexOf("image/") === -1) {
         alert("Please select an image file");
         return;
@@ -379,13 +389,15 @@ export default {
       }
     },
     showFileChooser() {
-      this.$refs.input.click();
+      let input = this.$refs[`input${this.imageCollection}`];
+      console.log('input',input)
+      input.click();
     },
     zoom(percent) {
       this.$refs.cropper.relativeZoom(percent);
     },
     async saveImage() {
-      console.log('save image imgSrc', this.imgSrc);
+
       await this.imageUpload({
         image: this.cropImg,
         mimeType: this.file.type,

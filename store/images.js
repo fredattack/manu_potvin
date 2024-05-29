@@ -18,7 +18,7 @@ export const mutations = {
 export const actions = {
 
     async imageUpload({commit},payload){
-        console.log('this.csrfToken',this.csrfToken)
+
     try {
         console.log("payload", payload)
         const response = await this.$axios.post('api/v1/image-upload/', payload);
@@ -38,4 +38,17 @@ export const actions = {
             console.error('Error fetching CSRF token:', error);
         }
     },
+    async deleteImage({commit}, payload) {
+        console.log("deleteImage", payload)
+        const response = await this.$axios.delete('api/v1/image-upload/' + payload.id);
+        commit('SET_IMAGES', response.data.images);
+        if(payload.callback){
+            commit('callback', response.data.callbackImage);
+        }
+        if(payload.successCallback){
+            processSuccessCallback(payload)
+        }
+
+        this.$toast.success(response.data.message, {duration: 1200});
+    }
 };
