@@ -45,19 +45,15 @@
                   <label
                       for="file-upload"
                       class="relative cursor-pointer rounded-md font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
-                    <span>Upload a file</span>
+                    <span @click.prevent="showFileChooser">Upload a file</span>
                     <input
                         @click.prevent="showFileChooser"
-                        id="file-upload"
-                        name="file-upload"
+                        :id="`file-upload${{imageCollection}}`"
+                        :name="`file-upload${{imageCollection}}`"
                         type="file"
                         class="sr-only"/>
                   </label>
-                  <p class="pl-1">
-                    or
-                    drag
-                    and
-                    drop</p>
+
                 </div>
                 <p class="text-xs leading-5 text-gray-600">
                   PNG,
@@ -389,6 +385,7 @@ export default {
       }
     },
     showFileChooser() {
+
       let input = this.$refs[`input${this.imageCollection}`];
       console.log('input',input)
       input.click();

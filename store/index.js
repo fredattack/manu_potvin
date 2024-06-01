@@ -11,26 +11,26 @@ Vue.use(Vuex);
 export const state = () => ({});
 
 export const actions = {
-    async nuxtServerInit({ dispatch }) {
-        await dispatch('auth/fetchCSRF');
-    }
+  async nuxtServerInit({ dispatch }) {
+    await dispatch('auth/fetchCSRF');
+  },
 };
 
 export const modules = {
-    auth: {
-        namespaced: true,
-        ...authModule
-    },
-    realisations: {
-        namespaced: true,
-        ...realisationsModule
-    },
-    temoignages: {
-        namespaced: true,
-        ...temoignagesModule
-    },
-    images: {
-        namespaced: true,
-        ...imageModule
-    }
+  auth: {
+    namespaced: true,
+    ...authModule,
+  },
+  realisations: {
+    namespaced: true,
+    ...realisationsModule,
+  },
+  temoignages: {
+    namespaced: true,
+    ...temoignagesModule,
+  },
+  images: {
+    namespaced: true,
+    ...imageModule,
+  },
 };

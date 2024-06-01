@@ -1,94 +1,100 @@
 <template>
   <section class="gallery-section">
     <div class="auto-container">
-      <!--MixitUp Galery-->
-      <h3 v-if="category">Nos Réalisations</h3>
+      <!--MixitUp Gallery-->
+      <h3 v-if="category && realisations.length">Nos Réalisations</h3>
       <div class="mixitup-gallery">
+        {{ localCategory }}
         <!--Filter-->
-
         <div class="filters centered clearfix" v-if="!category">
-          <ul class="filter-tabs filter-btns clearfix">
-            <li class="filter mixitup-control-active" data-role="button" data-filter=".all">tout</li>
-            <li class="filter" data-role="button" :data-filter="`.${title}`" v-for="title in categoryList">
+          <ul class="filter-tabs clearfix">
+            <li
+                :class="['filter', { 'mixitup-control-active': !localCategory || localCategory === 'all'  }]"
+                data-role="button"
+                data-filter=".all"
+                @click="filterRealisations('all')"
+            >tout</li>
+            <li
+                class="filter"
+                v-for="title in categoryList"
+                :class="['filter', { 'mixitup-control-active': localCategory === title }]"
+                :key="title"
+                @click="filterRealisations(title)"
+            >
               {{ title.replaceAll('_', ' ') }}
             </li>
           </ul>
         </div>
-        <div class="filter-list row" v-if="portfolio_data_filtered">
+        <div class="filter-list row justify-content-center">
           <!-- Gallery Item -->
-          <div class="gallery-item mix all col-lg-4 col-md-6 col-sm-12" :class="item.category"
-               v-for="item in portfolio_data_filtered">
-            <div class="inner-box">
-              <figure class="image"><img :srcset="item.picture" alt="" loading="lazy" height="150"></figure>
-              <div class="cap-box">
-                <div class="cap-inner">
-                  <div class="cat"><span>{{ item.name }}</span></div>
-<!--                  <div class="title">
-                    <h5>
-                      <nuxt-link to="#">{{ item.name }}</nuxt-link>
-                    </h5>
-                  </div>-->
-                </div>
-              </div>
-            </div>
+          <div
+              class="gallery-item mix all col-lg-4 col-md-6 col-sm-12"
+              :class="item.category"
+              v-for="item in portfolio_data_filtered"
+              :key="item.id"
+          >
+            <achievement-card :item="item" />
           </div>
-
-
         </div>
-
       </div>
-
     </div>
   </section>
 </template>
 
 <script>
-import {portfolio_data} from "../static/data/portfolio_data";
+import { mapActions, mapState } from "vuex";
+import AchievementCard from "@/components/AchievementCard.vue";
+// import mixitup from "mixitup";
+// import GLightbox from "glightbox";
 
 export default {
   name: "GalleryPage",
-  props: ['category'],
+  components: {
+    AchievementCard,
+  },
+  props: ["category"],
   data() {
     return {
       mixer: null,
-      portfolio_data: portfolio_data
-    }
-  },
-  mounted() {
-
-    const containerEl = document.querySelector('.filter-list')
-    this.mixer = new this.mixitup(containerEl, {});
-
-    new GLightbox({
-      selector: '.lightbox-image',
-      touchNavigation: true,
-      loop: true,
-      autoplayVideos: true
-    });
-    console.log('category_list', this.categoryList)
+      portfolio_data_filtered: [],
+      localCategory: this.category,
+    };
   },
   computed: {
-    portfolio_data_filtered: function () {
-      console.log('this.category',this.category)
-      if (this.category) {
+    ...mapState("realisations", ["realisations"]),
 
-        const _category = this.category
-        return portfolio_data.filter(function (data) {
-          return data.category === _category;
-        });
-      }
-      return portfolio_data
+    categoryList() {
+      const list = this.realisations.map((item) => item.category);
+      return [...new Set(list)];
     },
+  },
+  methods: {
+    ...mapActions("realisations", ["getAllRealisations"]),
+    filterRealisations(value) {
+      this.localCategory = value
+      if (value && value !== "all") {
+        this.portfolio_data_filtered = this.realisations.filter((data) => data.category === value);
+      } else {
+        this.portfolio_data_filtered = this.realisations;
+      }
+    },
+  },
+  async mounted() {
+    await this.getAllRealisations({ published: true });
+    this.portfolio_data_filtered = this.realisations;
 
-    categoryList: function () {
-      const list = this.portfolio_data_filtered.map(item => item.category)
-      return [...new Set(list)]
-    }
-
-  }
-}
+    this.filterRealisations(this.category)
+    // this.$nextTick(() => {
+    //   const containerEl = document.querySelector(".filter-list");
+    //   this.mixer = mixitup(containerEl);
+    //
+    //   GLightbox({
+    //     selector: ".lightbox-image",
+    //     touchNavigation: true,
+    //     loop: true,
+    //     autoplayVideos: true,
+    //   });
+    // });
+  },
+};
 </script>
-
-<style scoped>
-
-</style>

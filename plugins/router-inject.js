@@ -1,3 +1,3 @@
 export default ({ app }, inject) => {
-    inject('router', app.router);
-}
+  inject('router', app.router);
+};
