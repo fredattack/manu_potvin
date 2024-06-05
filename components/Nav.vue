@@ -133,6 +133,7 @@ export default {
   },
   mounted() {
     console.log('name', this.$route.name)
+
     window.addEventListener('scroll', this.handleScroll);
 
     const mobileNav = document.querySelector('.mobile-nav__container');

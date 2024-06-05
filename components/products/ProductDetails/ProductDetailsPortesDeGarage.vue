@@ -9,7 +9,6 @@
               <img src="../../../static/images/custom/porte_garage_main.jpeg" alt="">
             </div>
             <div class="text-content">
-              <h3>Les portes de garage</h3>
               <p>Dans la plupart des ménages de nos jours, la porte de garage est le principal point d'entrée de votre maison et occupe un quart à un tiers de la façade.
                 Nous pouvons vous aider à améliorer l'attrait de votre maison en adaptant votre porte de garage à celle ci. </p>
                <p> Avec un style et un prix adaptés à tous les budgets, demandez comment nous pouvons vous aider...</p>
