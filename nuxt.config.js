@@ -1,8 +1,12 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import dotenv from 'dotenv';
 import postcssOptions from './postcss.config';
+
+dotenv.config();
 
 export default {
   ssr: true,
-  mode: 'universal',
+
   /*
     ** Headers of the page
     */
@@ -95,16 +99,16 @@ export default {
       },
     ],
 
-    script: [
-      {
-        src: '/plugins/glightbox/glightbox.min.js',
-        body: true,
-      },
-      {
-        src: '/plugins/accordion/accordion.min.js',
-        body: true,
-      },
-    ],
+    // script: [
+    //   {
+    //     src: '/plugins/glightbox/glightbox.min.js',
+    //     body: true,
+    //   },
+    //   {
+    //     src: '/plugins/accordion/accordion.min.js',
+    //     body: true,
+    //   },
+    // ],
   },
   /*
     ** Customize the progress-bar color
@@ -142,10 +146,10 @@ export default {
   /*
     ** Nuxt.js dev-modules
     */
-  buildModules: [
-    '@nuxt/image',
-    '@nuxtjs/fontawesome',
-  ],
+  // buildModules: [
+  //   '@nuxt/image',
+  //   '@nuxtjs/fontawesome',
+  // ],
   /*
     ** Nuxt.js modules
     */
@@ -281,5 +285,9 @@ export default {
         component: resolve(__dirname, 'pages/back-office/temoignages/_id.vue'),
       });
     },
+  },
+  server: {
+    host: process.env.NUXT_HOST || '0.0.0.0', // default: localhost
+    port: process.env.NUXT_PORT || 3000, // default: 3000
   },
 };
